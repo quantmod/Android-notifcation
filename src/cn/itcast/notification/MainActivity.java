@@ -40,6 +40,7 @@ public class MainActivity extends Activity {
     	//在此处设置在notify下拉列表里该notification的显示情况。
     	notification.setLatestEventInfo(this, title, content, pendingIntent);
     	notification.defaults = Notification.DEFAULT_SOUND;
+    	//点击通知后自动清除通知
     	notification.flags = Notification.FLAG_AUTO_CANCEL;
     	
     	NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
