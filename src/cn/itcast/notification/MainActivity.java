@@ -30,14 +30,14 @@ public class MainActivity extends Activity {
     	String tickerText = shorttitleText.getText().toString();
     	String title = titleText.getText().toString();
     	String content = contentText.getText().toString();
-    	//android.RÏµÍ³×Ô´ø×ÊÔ´,notificationµ½À´Ê±×´Ì¬À¸Í¨ÖªÍ¼Æ¬ºÍÎÄ×Ö
+    	//android.Rç³»ç»Ÿè‡ªå¸¦èµ„æº,notificationåˆ°æ¥æ—¶çŠ¶æ€æ é€šçŸ¥å›¾æ ‡å’Œæ¦‚è¦
     	Notification notification = new Notification(android.R.drawable.stat_notify_chat, tickerText, System.currentTimeMillis());
     	
     	Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:194949494"));
     
-    	//ÑÓ³ÙÖ´ĞĞµÄintent,¸ÃÓï¾äµÄ×÷ÓÃÊÇ¶¨ÒåÁËÒ»¸ö²»ÊÇµ±¼´ÏÔÊ¾µÄactivity£¬Ö»ÓĞµ±ÓÃ»§À­ÏÂnotifyÏÔÊ¾ÁĞ±í£¬²¢ÇÒµ¥»÷¶ÔÓ¦µÄÏîµÄÊ±ºò£¬²Å»á´¥·¢ÏµÍ³Ìø×ªµ½¸Ãactivity.
+    	//å»¶è¿Ÿæ‰§è¡Œçš„intent,è¯¥è¯­å¥çš„ä½œç”¨æ˜¯å®šä¹‰äº†ä¸€ä¸ªä¸æ˜¯å½“å³æ˜¾ç¤ºçš„activityï¼Œåªæœ‰å½“ç”¨æˆ·æ‹‰ä¸‹notifyæ˜¾ç¤ºåˆ—è¡¨ï¼Œå¹¶ä¸”å•å‡»å¯¹åº”çš„é¡¹çš„æ—¶å€™ï¼Œè·³è½¬åˆ°è¯¥activity.
     	PendingIntent pendingIntent = PendingIntent.getActivity(this, 10, intent, 0);
-    	//ÔÚ´Ë´¦ÉèÖÃÔÚnotifyÏÂÀ­ÁĞ±íÀï¸ÃnotificationµÄÏÔÊ¾Çé¿ö¡£
+    	//åœ¨æ­¤å¤„è®¾ç½®åœ¨notifyä¸‹æ‹‰åˆ—è¡¨é‡Œè¯¥notificationçš„æ˜¾ç¤ºæƒ…å†µã€‚
     	notification.setLatestEventInfo(this, title, content, pendingIntent);
     	notification.defaults = Notification.DEFAULT_SOUND;
     	notification.flags = Notification.FLAG_AUTO_CANCEL;
